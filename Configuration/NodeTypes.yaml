@@ -83,3 +83,11 @@
         reloadIfChanged: true
         inspector:
           group: googlemaps
+    draggable:
+      type: boolean
+      defaultValue: true
+      ui:
+        label: 'Draggable:'
+        reloadIfChanged: true
+        inspector:
+          group: googlemaps

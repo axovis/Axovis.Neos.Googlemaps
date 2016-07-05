@@ -3,3 +3,8 @@ TYPO3:
     typoScript:
       autoInclude:
         'Axovis.Neos.Googlemaps': TRUE
+
+Axovis:
+  Neos:
+    Googlemaps:
+      googleApiKey: 'your-api-key'

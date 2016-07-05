@@ -1,11 +1,16 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
 <div{attributes -> f:format.raw()}>
+    <style>
+        #axovis-map-canvas {height: 100%}
+    </style>
 
-
+    <div id="axovis-map-canvas">
+    </div>
 
 	<script>
+        var map;
 		<![CDATA[
-        initializeMap = function() {
+        function initMap() {
 			var myLatlng = new google.maps.LatLng(]]>{longitude}<![CDATA[,]]>{latitude}<![CDATA[);
 			var mapOptions = {
 				zoom: ]]>{zoomlevel}<![CDATA[,
@@ -14,7 +19,8 @@
 				panControl: false,
 				rotateControl: false,
 				scrollwheel: false,
-				scaleControl: false
+				scaleControl: false,
+				draggable: ]]>{draggable}<![CDATA[
 			}
 
 			var styles = [
@@ -36,7 +42,7 @@
 			var styledMap = new google.maps.StyledMapType(styles,
 					{name: "Styled Map"});
 
-			var map = new google.maps.Map(document.getElementById('axovis-map-canvas'), mapOptions);
+            map = new google.maps.Map(document.getElementById('axovis-map-canvas'), mapOptions);
 
 			//Associate the styled map with the MapTypeId and set it to display.
 			map.mapTypes.set('map_style', styledMap);
@@ -67,24 +73,4 @@
 		}
 		]]>
 	</script>
-
-	<div id="axovis-map-canvas" style="height: {height}; width: {width}">
-	</div>
 </div>
-
-<f:section name="bodyJavascript">
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
-    <script type="application/javascript">
-        $(document).ready(function() {
-            if (typeof initializeMap === 'function') {
-                initializeMap();
-
-                if (typeof document.addEventListener === 'function') {
-                    document.addEventListener('Neos.PageLoaded', function() {
-                        initializeMap();
-                    }, false);
-                }
-            }
-        });
-    </script>
-</f:section>

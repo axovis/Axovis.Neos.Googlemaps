@@ -1,19 +1,42 @@
 # Google Map
 prototype(Axovis.Neos.Googlemaps:GoogleMap) < prototype(TYPO3.Neos:Content){
      templatePath = 'resource://Axovis.Neos.Googlemaps/Private/Templates/NodeTypes/Googlemaps.html'
+     attributes.style = ${'height:' + q(node).property('height') + ';width:' +  q(node).property('width') + ';'}
 
      longitude = ${q(node).property('longitude')}
      latitude = ${q(node).property('latitude')}
      zoomlevel = ${q(node).property('zoomlevel')}
      infoheadl = ${q(node).property('infoheadl')}
      infotext = ${q(node).property('infotext')}
-     width = ${q(node).property('width')}
-     height = ${q(node).property('height')}
      popupHeight = ${q(node).property('popupHeight')}
      popupWidth = ${q(node).property('popupWidth')}
+     draggable = ${q(node).property('draggable') == true ? 'true' : 'false'}
 }
 
-page.body.javascripts.googlemaps = TYPO3.TypoScript:Template {
-	templatePath = 'resource://Axovis.Neos.Googlemaps/Private/Templates/NodeTypes/Googlemaps.html'
-	sectionName = 'bodyJavascript'
+# Add javascript to default page, add only to page where element is available
+page.body.javascripts.googlemaps = TYPO3.TypoScript:Tag {
+    tagName = 'script'
+    omitClosingTag = FALSE
+
+    attributes {
+        async = ''
+        defer = ''
+        src = ${'https://maps.googleapis.com/maps/api/js?key=' + Configuration.setting('Axovis.Neos.Googlemaps.googleApiKey') + '&callback=initMap'}
+    }
+}
+page.body.javascripts.googlemaps.@if.hasNodeType = ${q(node).find('[instanceof Axovis.Neos.Googlemaps:GoogleMap]').is()}
+
+# Alternative to add javascript if Page is defined via prototype
+prototype(Page) {
+    body.javascripts.googlemaps = TYPO3.TypoScript:Tag {
+        tagName = 'script'
+        omitClosingTag = FALSE
+
+        attributes {
+            async = ''
+            defer = ''
+            src = ${'https://maps.googleapis.com/maps/api/js?key=' + Configuration.setting('Axovis.Neos.Googlemaps.googleApiKey') + '&callback=initMap'}
+        }
+    }
+    body.javascripts.googlemaps.@if.hasNodeType = ${q(node).find('[instanceof Axovis.Neos.Googlemaps:GoogleMap]').is()}
 }
