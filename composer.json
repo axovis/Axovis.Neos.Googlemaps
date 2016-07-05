@@ -1,0 +1,30 @@
+{
+    "name": "axovis/neos-googlemaps",
+    "description": "Add googlemaps plugin to neos",
+    "type": "typo3-flow-plugin",
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "Alexander Kappler",
+            "email": "kappler@axovis.com"
+        },
+        {
+            "name": "Sönke Michelsen",
+            "email": "s.michelsen@axovis.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "typo3/flow": "3.*",
+        "typo3/typoscript": "*",
+        "typo3/neos": "2.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Axovis\\Neos\\Googlemaps": "Classes"
+        }
+    },
+    "extra": {
+        "marketplace-account": "kappler@axovis.com"
+    }
+}

@@ -1,0 +1,85 @@
+
+'Axovis.Neos.Googlemaps:GoogleMap':
+  superTypes:
+    'TYPO3.Neos:Content': true
+  ui:
+    group: general
+    icon: icon-map-marker
+    label: 'Google Map'
+    inspector:
+      groups:
+        googlemaps:
+          label: 'Google Map'
+  properties:
+    longitude:
+      type: string
+      defaultValue: '53.54917823082281'
+      ui:
+        label: 'Longitude:'
+        reloadIfChanged: true
+        inspector:
+          group: googlemaps
+    latitude:
+      type: string
+      defaultValue: '9.943785667419434'
+      ui:
+        label: 'Latitude:'
+        reloadIfChanged: true
+        inspector:
+          group: googlemaps
+    zoomlevel:
+      type: string
+      defaultValue: '15'
+      ui:
+        label: 'Zoomlevel 1-20'
+        reloadIfChanged: true
+        inspector:
+          group: googlemaps
+    infoheadl:
+      type: string
+      defaultValue: Headline
+      ui:
+        label: 'Infowindow Headline'
+        reloadIfChanged: true
+        inspector:
+          group: googlemaps
+    infotext:
+      type: string
+      defaultValue: Text
+      ui:
+        label: 'Infowindow Text'
+        reloadIfChanged: true
+        inspector:
+          group: googlemaps
+    width:
+      type: string
+      defaultValue: 100%
+      ui:
+        label: 'Width:'
+        reloadIfChanged: true
+        inspector:
+          group: googlemaps
+    height:
+      type: string
+      defaultValue: 400px
+      ui:
+        label: 'Height:'
+        reloadIfChanged: true
+        inspector:
+          group: googlemaps
+    popupHeight:
+      type: string
+      defaultValue: 70px
+      ui:
+        label: 'Infowindow Height:'
+        reloadIfChanged: true
+        inspector:
+          group: googlemaps
+    popupWidth:
+      type: string
+      defaultValue: 220px
+      ui:
+        label: 'Infowindow Width:'
+        reloadIfChanged: true
+        inspector:
+          group: googlemaps

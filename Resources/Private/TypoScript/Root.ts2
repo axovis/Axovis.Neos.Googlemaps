@@ -1,0 +1,19 @@
+# Google Map
+prototype(Axovis.Neos.Googlemaps:GoogleMap) < prototype(TYPO3.Neos:Content){
+     templatePath = 'resource://Axovis.Neos.Googlemaps/Private/Templates/NodeTypes/Googlemaps.html'
+
+     longitude = ${q(node).property('longitude')}
+     latitude = ${q(node).property('latitude')}
+     zoomlevel = ${q(node).property('zoomlevel')}
+     infoheadl = ${q(node).property('infoheadl')}
+     infotext = ${q(node).property('infotext')}
+     width = ${q(node).property('width')}
+     height = ${q(node).property('height')}
+     popupHeight = ${q(node).property('popupHeight')}
+     popupWidth = ${q(node).property('popupWidth')}
+}
+
+page.body.javascripts.googlemaps = TYPO3.TypoScript:Template {
+	templatePath = 'resource://Axovis.Neos.Googlemaps/Private/Templates/NodeTypes/Googlemaps.html'
+	sectionName = 'bodyJavascript'
+}
