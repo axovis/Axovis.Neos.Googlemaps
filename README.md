@@ -1,4 +1,4 @@
-# Axovis.Neos.Googlemaps
+# Google Maps Package for Neos
 
 ![alt text](https://raw.githubusercontent.com/axovis/Axovis.Neos.Googlemaps/master/Resources/Public/Images/Neos_GM.jpg "Axovi's Google Maps for Neos")
 [![Latest Stable Version](https://poser.pugx.org/axovis/neos-googlemaps/v/stable?format=flat-square)](https://packagist.org/packages/axovis/neos-googlemaps) [![License](https://poser.pugx.org/axovis/neos-googlemaps/license?format=flat-square)](https://packagist.org/packages/axovis/neos-googlemaps)

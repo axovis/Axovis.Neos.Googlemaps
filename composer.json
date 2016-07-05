@@ -2,7 +2,7 @@
     "name": "axovis/neos-googlemaps",
     "description": "Add googlemaps plugin to neos",
     "type": "typo3-flow-plugin",
-    "license": "GPL-2.0",
+    "license": "GPL-3.0+",
     "authors": [
         {
             "name": "Alexander Kappler",
