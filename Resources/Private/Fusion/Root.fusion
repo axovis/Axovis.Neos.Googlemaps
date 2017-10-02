@@ -1,5 +1,5 @@
 # Google Map
-prototype(Axovis.Neos.Googlemaps:GoogleMap) < prototype(TYPO3.Neos:Content){
+prototype(Axovis.Neos.Googlemaps:GoogleMap) < prototype(Neos.Neos:Content){
      templatePath = 'resource://Axovis.Neos.Googlemaps/Private/Templates/NodeTypes/Googlemaps.html'
      attributes.style = ${'height:' + q(node).property('height') + ';width:' +  q(node).property('width') + ';'}
 
@@ -14,7 +14,7 @@ prototype(Axovis.Neos.Googlemaps:GoogleMap) < prototype(TYPO3.Neos:Content){
 }
 
 # Add javascript to default page, add only to page where element is available
-page.body.javascripts.googlemaps = TYPO3.TypoScript:Tag {
+page.body.javascripts.googlemaps = Neos.Fusion:Tag {
     tagName = 'script'
     omitClosingTag = FALSE
 
@@ -28,7 +28,7 @@ page.body.javascripts.googlemaps.@if.hasNodeType = ${q(node).find('[instanceof A
 
 # Alternative to add javascript if Page is defined via prototype
 prototype(Page) {
-    body.javascripts.googlemaps = TYPO3.TypoScript:Tag {
+    body.javascripts.googlemaps = Neos.Fusion:Tag {
         tagName = 'script'
         omitClosingTag = FALSE
 
