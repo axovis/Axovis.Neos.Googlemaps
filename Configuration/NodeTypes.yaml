@@ -1,7 +1,7 @@
 
 'Axovis.Neos.Googlemaps:GoogleMap':
   superTypes:
-    'TYPO3.Neos:Content': true
+    'Neos.Neos:Content': true
   ui:
     group: general
     icon: icon-map-marker
